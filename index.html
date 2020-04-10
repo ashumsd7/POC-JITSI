@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <script src="https://npmcdn.com/vue/dist/vue.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src='https://meet.jit.si/external_api.js'></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <title>Proof of Concept : JITSI</title>
+
+
+    <style>
+
+        #title{
+            color: white;
+            background-color: gray;
+        }
+        body {
+            color: black;
+            background-color: azure;
+        }
+
+        .center {
+            margin: auto;
+            float: right;
+            width: 50%;
+            border: 3px solid black;
+            border-radius: 10px;
+            box-shadow: 2px 13px 10px gray;
+            padding: 5px;
+        }
+        #mainContent{
+            display: inline;
+        }
+        #jitsi
+        {
+            margin-top: -680px;
+            margin-right: 10px;
+        }
+        #video{
+            margin-left: 10px;
+            
+           
+           
+
+        }
+        #info{
+            margin-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div id="mainContent">
+        <div id="navBarPOC">
+            <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+                <a class="navbar-brand" href="#" style="color: blanchedalmond;">JITSI DEMO</a>
+            </nav>
+        </div>
+
+<div id="title">
+    <h3>Your Appointment with : {{DoctorName}} </h3>
+    <hr>
+    
+</div>
+
+
+
+
+        </div>
+
+
+   <div id="video"><iframe width="450" height="345" src="https://www.youtube.com/embed/3PmVJQUCm4E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+
+   <div id="info">
+    <h5> Name:</h5>  {{pName}} 
+    <hr>
+       <h5>Age</h5>  {{pAge}} 
+       <hr>
+      <h5>BP:</h5>  {{pBP}} 
+      <hr>
+      
+      <h5>History:</h5> {{pHistory}} 
+        
+        
+   </div>
+
+        <div id="jitsi" class="center">
+
+        </div>
+
+    </div>
+    </div>
+
+
+    <script>
+        $(document).ready(function () {
+            const domain = 'meet.jit.si';
+            const options = {
+                roomName: 'JITSI MEET POC',
+                width: 600,
+                height: 500,
+                parentNode: document.querySelector('#jitsi')
+            };
+            const api = new JitsiMeetExternalAPI(domain, options);
+        });
+    </script>
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>
